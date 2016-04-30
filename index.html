@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Apidoc by sysadminPSQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Apidoc</h1>
+      <h2 class="project-tagline">RESTful web API Documentation Generator.</h2>
+      <a href="https://github.com/sysadminPSQ/apidoc" class="btn">View on GitHub</a>
+      <a href="https://github.com/sysadminPSQ/apidoc/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sysadminPSQ/apidoc/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="apidoc" class="anchor" href="#apidoc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>apiDoc</h1>
+
+<p>Generates a RESTful web API Documentation.</p>
+
+<p><a href="https://travis-ci.org/apidoc/apidoc"><img src="https://travis-ci.org/apidoc/apidoc.svg?branch=master" alt="Build Status"></a>
+<a href="https://david-dm.org/apidoc/apidoc"><img src="https://david-dm.org/apidoc/apidoc.svg" alt="Dependency Status"></a>
+<a href="http://badge.fury.io/js/apidoc"><img src="https://badge.fury.io/js/apidoc.svg" alt="NPM version"></a></p>
+
+<p><strong>Changes from previous version visit <a href="https://github.com/apidoc/apidoc/blob/master/CHANGELOG.md">CHANGELOG.md</a></strong></p>
+
+<p>apiDoc creates a documentation from API descriptions in your source code.</p>
+
+<p>Documentation at <a href="http://apidocjs.com">apidocjs.com</a>.</p>
+
+<p><a href="http://apidocjs.com/example/">Example</a> output.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><code>npm install apidoc -g</code></p>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p><a href="https://github.com/apidoc/apidoc/blob/master/CHANGELOG.md">CHANGELOG.md</a></p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * @api {get} /user/:id Request User information</span>
+<span class="pl-c"> * @apiName GetUser</span>
+<span class="pl-c"> * @apiGroup User</span>
+<span class="pl-c"> *</span>
+<span class="pl-c"> * @apiParam <span class="pl-en">{Number}</span> <span class="pl-smi">id</span> Users unique ID.</span>
+<span class="pl-c"> *</span>
+<span class="pl-c"> * @apiSuccess <span class="pl-en">{String}</span> <span class="pl-smi">firstname</span> Firstname of the User.</span>
+<span class="pl-c"> * @apiSuccess <span class="pl-en">{String}</span> <span class="pl-smi">lastname</span>  Lastname of the User.</span>
+<span class="pl-c"> */</span></pre></div>
+
+<p><code>apidoc -i example/ -o doc/</code></p>
+
+<p>Creates from input files in <code>example/</code> a documentation in path <code>doc/</code>.</p>
+
+<p>More examples and best practice hints: <a href="https://github.com/apidoc/apidoc/blob/master/EXAMPLES.md">EXAMPLES.md</a></p>
+
+<h2>
+<a id="supported-programming-languages" class="anchor" href="#supported-programming-languages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported programming languages</h2>
+
+<ul>
+<li>
+<p><strong>C#, Go, Dart, Java, JavaScript, PHP, Scala</strong> (all DocStyle capable languages):</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * This is a comment.</span>
+<span class="pl-c"> */</span></pre></div>
+</li>
+<li>
+<p><strong>Clojure</strong>:</p>
+
+<div class="highlight highlight-source-clojure"><pre><span class="pl-c">;;;;</span>
+<span class="pl-c">;; This is a comment.</span>
+<span class="pl-c">;;;;</span></pre></div>
+</li>
+<li>
+<p><strong>CoffeeScript</strong>:</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-c">###</span>
+<span class="pl-c">This is a comment.</span>
+<span class="pl-c">###</span></pre></div>
+</li>
+<li>
+<p><strong>Erlang</strong>:</p>
+
+<div class="highlight highlight-source-erlang"><pre><span class="pl-c">%{</span>
+<span class="pl-smi">This</span> <span class="pl-c1">is</span> <span class="pl-c1">a</span> <span class="pl-c1">comment</span>.
+<span class="pl-c">%}</span></pre></div>
+</li>
+<li>
+<p><strong>Perl</strong></p>
+
+<div class="highlight highlight-source-perl"><pre><span class="pl-c">#**</span>
+<span class="pl-c"># This is a comment.</span>
+<span class="pl-c">#*</span></pre></div>
+
+<div class="highlight highlight-source-perl"><pre><span class="pl-c">=pod</span>
+<span class="pl-c">This is a comment.</span>
+<span class="pl-c">=cut</span></pre></div>
+</li>
+<li>
+<p><strong>Python</strong></p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">This is a comment.</span>
+<span class="pl-s"><span class="pl-pds">"""</span></span></pre></div>
+</li>
+<li>
+<p><strong>Ruby</strong></p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c">=begin</span>
+<span class="pl-c">This is a comment.</span>
+<span class="pl-c">=end</span></pre></div>
+</li>
+</ul>
+
+<h2>
+<a id="build-tools" class="anchor" href="#build-tools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build tools</h2>
+
+<ul>
+<li>
+<a href="https://pypi.python.org/pypi/flask-apidoc/">flask-apidoc</a> <code>pip install flask-apidoc</code>
+</li>
+<li>
+<a href="https://github.com/apidoc/grunt-apidoc">grunt-apidoc</a> <code>npm install grunt-apidoc</code>.</li>
+<li>
+<a href="https://github.com/ayhankuru/gulp-apidoc">gulp-apidoc</a> <code>npm install gulp-apidoc</code>.</li>
+</ul>
+
+<h2>
+<a id="editor-integration" class="anchor" href="#editor-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Editor integration</h2>
+
+<ul>
+<li><a href="https://github.com/DWand/eclipse_pdt_apiDoc_editor_templates">Eclipse plugin</a></li>
+<li><a href="https://github.com/DWand/ST3_apiDocAutocompletion">Sublime Text plugin</a></li>
+</ul>
+
+<h2>
+<a id="converter" class="anchor" href="#converter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Converter</h2>
+
+<ul>
+<li><a href="https://github.com/fsbahman/apidoc-swagger">apidoc-swagger</a></li>
+<li><a href="https://github.com/fsbahman/gulp-apidoc-swagger">gulp-apidoc-swagger</a></li>
+</ul>
+
+<h2>
+<a id="faq" class="anchor" href="#faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FAQ</h2>
+
+<ul>
+<li><a href="https://github.com/apidoc/grunt-apidoc/issues/27#issuecomment-147664797">Filter for public / private API</a></li>
+</ul>
+
+<h2>
+<a id="help" class="anchor" href="#help" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Help</h2>
+
+<p>Please add <a href="https://github.com/apidoc/apidoc/issues">issues</a> if you have a question or found a problem.
+Pull requests are welcome too!</p>
+
+<p>A chat about apiDoc is on <a href="https://gitter.im/apidoc/talk">Gitter</a>.</p>
+
+<p><a href="https://gitter.im/apidoc/talk"><img src="https://badges.gitter.im/apidoc/talk.png" alt="Gitter chat"></a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sysadminPSQ/apidoc">Apidoc</a> is maintained by <a href="https://github.com/sysadminPSQ">sysadminPSQ</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
